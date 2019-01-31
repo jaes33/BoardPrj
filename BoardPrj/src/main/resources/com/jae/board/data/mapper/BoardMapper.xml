@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.jae.board.data.mapper.BoardMapper">
+	<insert id="boardInsert" parameterType="com.jae.board.data.vo.Board">
+		INSERT INTO board(title, content, writer, date)
+		VALUES ((#{title}, #{content}, #{writer}, now())
+	</insert>
+	
+	<select id="boardList" resultType="board">
+		SELECT * FROM board
+	</select>
+	
+	<select id="boardDetail" resultType="board">
+		SELECT * FROM board WHERE id = #{id}
+	</select>
+
+	<update id="boardUpdate" parameterType="board">
+		UPDATE board SET title = #{title}, content = #{content} where id = #{id}
+	</update>
+	
+	<delete id="boardDelete" parameterType="int">
+		DELETE FROM board WHERE id = #{id}
+	</delete>
+</mapper>

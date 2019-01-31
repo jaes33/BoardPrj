@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+	<appender name = "consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>
+				%d{HH:mm:ss.SSS} %-5level %logger[%method:%line] - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/home/centos/Application.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>/c
+				%d{HH:mm:ss.SSS} %-5level %logger[%method:%line] - %msg%n
+			</Pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+		<FileNamePattern>/home/centos/Application.%i.log.zip</FileNamePattern>
+			<MinIndex>1</MinIndex>
+			<MaxIndex>10</MaxIndex>
+		</rollingPolicy>	
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>10KB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+	
+	<logger name="com" level="debug">
+		<appender-ref ref="fileAppender"/>
+		<appender-ref ref="consoleAppender"/>
+	</logger>
+	
+	<root level="warn">
+		<appender-ref ref="consoleAppender"/>
+	</root>
+</configuration>
