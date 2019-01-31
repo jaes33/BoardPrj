@@ -18,7 +18,7 @@
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://localhost:3306/board?serverTimezone=UTC&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;autoReconnect=true"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="1234"></property>
+		<property name="password" value="Je84802003!!"></property>
 	</bean> 
 	
 	<!-- SqlSessionFactory , classpath*는 import된 jar, classpath까지 읽음-->
