@@ -160,11 +160,11 @@
             <version>${org.springframework-version}</version>
         </dependency>
 		      
-		 <dependency>
+		 <!-- <dependency>
 			  <groupId>org.apache.maven.plugins</groupId>
 			  <artifactId>maven-compiler-plugin</artifactId>
 			  <version>3.2.0</version>
-		</dependency>									
+		</dependency> -->									
 	</dependencies>
     
     <build>
